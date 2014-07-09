@@ -2,11 +2,17 @@
 
 <?php
 
-require_once 'myMongo_class.php';
+define("DBHOST", "localhost");
+define("DBNAME", "testdb");
+define("DBUSER", "");
+define("DBPASS", "");
 
-$db = new myMongo();
-$res = $db->query();
+require_once 'mongoHelper_class.php';
 
-print_r($res);
+$db = new mongoHelper();
+
+$res = $db->get('items');
+echo '<pre>'.print_r($res, true).'</pre>';
+
 
 ?>
