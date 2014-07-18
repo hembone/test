@@ -2,16 +2,20 @@
 
 <?php
 
-define("DBHOST", "localhost");
-define("DBNAME", "testdb");
-define("DBUSER", "");
-define("DBPASS", "");
+define("MONGO_DBHOST", "localhost");
+define("MONGO_DBNAME", "paccar");
+define("MONGO_DBUSER", "");
+define("MONGO_DBPASS", "");
 
 require_once 'mongoHelper_class.php';
 
 $db = new mongoHelper();
 
-$res = $db->get('items');
+$res = $db->geoNear('hours', -87.629798, 41.878114);
+
+
+
+
 echo '<pre>'.print_r($res, true).'</pre>';
 
 

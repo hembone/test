@@ -2,10 +2,10 @@
 class mongoHelper {
 
 	function __construct() {
-		$dbhost = DBHOST;
-		$dbname = DBNAME;
-		$dbuser = DBUSER;
-		$dbpass = DBPASS;
+		$dbhost = MONGO_DBHOST;
+		$dbname = MONGO_DBNAME;
+		$dbuser = MONGO_DBUSER;
+		$dbpass = MONGO_DBPASS;
 		//$conn = new MongoClient("mongodb://".$dbhost, array("username"=>$dbuser, "password"=>$dbpass));
 		$conn = new MongoClient("mongodb://".$dbhost);
 		$this->db = $conn->$dbname;
@@ -16,7 +16,7 @@ class mongoHelper {
 		$result = [];
 		if($count > 0) {
 			foreach($cursor as $id=>$value) {
-			    $result[] = $value;
+				$result[] = $value;
 			}
 		} else {
 			$result = false;
@@ -30,10 +30,25 @@ class mongoHelper {
 		return $this->parse_cursor($cursor);
 	}
 
-	public function get_by_id($col, $id, $fields=array()) {
+	public function getById($col, $id, $fields=array()) {
 		$col = $this->db->$col;
 		$item = $col->findOne(array('_id' => new MongoId($id)), $fields);
 		return $item;
+	}
+
+	public function insert($col, $data=array()) {
+		$col = $this->db->$col;
+		return $col->insert($data);
+	}
+
+	public function update($col, $filter=array(), $update=array()) {
+		$col = $this->db->$col;
+		return $col->update($filter, $update);
+	}
+
+	public function updateById($col, $id, $update=array()) {
+		$col = $this->db->$col;
+		return $col->update(array('_id' => new MongoId($id)), $update);
 	}
 
 	public function upsert($col, $filter=array(), $update=array()) {
@@ -41,13 +56,19 @@ class mongoHelper {
 		return $col->update($filter, $update, array("upsert" => true));
 	}
 
-	public function upsert_by_id($col, $id, $update=array()) {
-		$col = $this->db->$col;
-		return $col->update(array('_id' => new MongoId($id)), $update, array("upsert" => true));
-	}
-
-	public function delete() {
-		$col = $this->db->$col;
+	public function geoNear($col, $lat, $lng, $filter=array(), $limit=1000) {
+		$query = array(
+			'geoNear' => $col
+			,'near' => array(
+				'type' => 'Point'
+				,'coordinates' => array($lng, $lat)
+			)
+			,'maxDistance' => 321869
+			,'spherical' => true
+			,'query' => $filter
+			,'num' => $limit
+		);
+		return $this->db->command($query);
 	}
 
 }
