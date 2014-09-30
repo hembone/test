@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>slider</title>
-
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<style>
+.slide_controls {
+    position: absolute;
+    font-size: 2em;
+}
+.slide_controls i {
+    cursor: pointer;
+    color: #888;
+}
+.slide_controls i:hover {
+    color: #000;
+}
+.input_fields div {
+    float: left;
+    margin: 20px;
+}
 #sequence {
 	height: 370px;
 	width: 600px;
@@ -105,45 +112,3 @@
     -ms-transition-duration: 1s;
     transition-duration: 1s;
 }
-</style>
-
-</head>
-<body>
-
-<div id="sequence">
-	<ul class="sequence-canvas">
-		<li class="animate-in">
-			<h1 class="title title1">Kenworth Quality</h1>
-			<div class="slide slide1">
-				<img src="slide1.jpg">
-			</div>
-		</li>
-		<li>
-			<h1 class="title title2">Built to Last</h1>
-			<div class="slide slide2">
-				<img src="slide2.jpg">
-			</div>
-		</li>
-		<li>
-			<h1 class="title title3">Outstanding Support</h1>
-			<div class="slide slide3">
-				<img src="slide3.jpg">
-			</div>
-		</li>
-	</ul>
-</div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="jquery.sequence-min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var options = {
-			autoPlay: true
-			,autoPlayDelay: 4000
-			//,animateStartingFrameIn: true
-		}
-		var sequence = $("#sequence").sequence(options).data("sequence");
-	});
-</script>
-</body>
-</html>
