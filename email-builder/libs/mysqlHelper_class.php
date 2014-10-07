@@ -12,34 +12,37 @@ class mysqlHelper
 		$this->db = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
 	}
 
-	public function get($table)
+	public function create_block($data)
 	{
+		$sql = 'INSERT INTO blocks (name, code) VALUES (:name, :code)';
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			':name'=>$data['name']
+			,':code'=>$data['code']
+		));
+		return $this->db->lastInsertId();
+	}
+
+	public function update_block($data)
+	{
+		$sql = 'UPDATE blocks (name, code) VALUES (:name, :code) WHERE id = :id';
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			':name'=>$data['name']
+			,':code'=>$data['code']
+			,':id'=>$data['id']
+		));
 
 	}
 
-	public function get_by_id($table, $id)
+	public function get_block_by_id($id)
 	{
-
-	}
-
-	public function insert($table, $id, $data)
-	{
-
-	}
-
-	public function update($table, $id, $data)
-	{
-
-	}
-
-	public function update_by_id($table, $id, $data)
-	{
-
-	}
-
-	public function query($query)
-	{
-
+		$sql = 'SELECT * FROM blocks WHERE id = :id';
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			':id'=>$id
+		));
+		return $sth->fetch();
 	}
 
 }
