@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cox Business Services</title>
+<link rel="stylesheet" href="css/form.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/radar-core-form-js.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="form">
+  <form action="#" target="_self" name="radarleadForm" id = "radarleadForm" method = "post" class="leadForm" >
+    <input name="IsPostBack" type="hidden" value="true">
+    <input name="ActionItem" type="hidden" value="lead">
+    <input name="campType" type="hidden" value="Sales">
+    <input name="campaignID" type="hidden" value="1010">
+    <input name="marketID"  type="hidden" value="1">
+    <input name="formType"  type="hidden" value="24.248.72.254">
+    <input name="referringURL"  type="hidden" value="[add current form's url]">
+    <input name="ReturnURL"  type="hidden" value="none" /><!-- no longer needed -->
+    <input name="routebyzip"  type="hidden" value="true" />
+    <div class="col-left">
+      <div class="field">
+        <label for="firstname" title="First Name">First Name</label>
+        <input type="text" name="fname" id="firstname" size="30" value="Richard" />
+      </div>
+      <div class="field">
+        <label for="lastname" title="Last Name">Last Name</label>
+        <input type="text" name="lname" id="lastname" size="30"  value="Newsome" />
+      </div>
+      <div class="field">
+        <label for="email" title="E-mail Address">Email Address</label>
+        <input type="text" name="email" id="email" size="30"  value="richard.newsome@cox.com"  />
+      </div>
+      <div class="field">
+        <label for="email" title="address1">address1</label>
+        <input name="add2" value="" type="text" id="address1" size="25"  value="test address" />
+      </div>
+      <div class="field">
+        <label for="email" title="address2">address2</label>
+        <input name="add1" value="Lake Hearn" type="text" id="address2" size="25" value="test address 2" />
+      </div>
+      <div class="field">
+        <label for="email" title="city">city</label>
+        <input name="city" value="Atlanta" type="text" id="city" size="25" value="test city" />
+      </div>
+      <div class="fieldgroup">
+        <div class="field inline zip">
+          <label for="zip" title="Zip Code">Zip Code</label>
+          <input type="text" name="zip" id="zip" size="8" maxlength="10"  value="55555" />
+        </div>
+        <div class="field inline select state">
+          <label for="market_state" title="State">State</label>
+          <select name="market_state" id="market_state">
+            <option value=""> -&or;-</option>
+            <option value="AL" selected>AL</option>
+            <option value="AK">AK</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="DC">DC</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="IA">IA</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="ID">ID</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OK">OK</option>
+            <option value="OH">OH</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+          </select>
+        </div>
+      </div>
+      <div class="fieldgroup">
+        <div class="field inline">
+          <label for="areacode" title="Area Code">Area Code</label>
+          <input type="text" name="areacode" id="areacode" size="1" maxlength="3"  value="440"  />
+        </div>
+        <div class="field inline">
+          <label for="phone" title="Phone Number">Phone XXX-XXXX</label>
+          <input type="text" name="phone" id="phone" size="6" maxlength="8"  value="777-9311" />
+        </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="field">
+        <label for="companyname" title="Company Name">Company Name</label>
+        <input type="text" name="company" id="companyname" size="30"  value="Cox Business" />
+      </div>
+      <button type="submit" id="radar_submit_button">Submit</button>
+    </div>
+  </form>
+</div>
+<script>
+
+
+
+
+</script>
+</body>
+</html>
