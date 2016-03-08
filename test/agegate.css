@@ -72,6 +72,12 @@
 	color: #ffffff;
 	font-size: 1em;
 }
+#agegate-overlay .ag-select select option {
+	color: #000000;
+}
+#agegate-overlay .ag-select select option:first-child {
+	color: #ffffff;
+}
 #agegate-overlay #submit-age {
 	border: none;
 	color: #000000;
