@@ -1,0 +1,64 @@
+.container {
+   /* width: 1052px; 
+    left: 10%;
+    height: 700px;
+    overflow: scroll;
+    position: absolute;*/
+    background: #ededed;
+}
+
+.Intro {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    color: #000;
+    position: relative;
+}
+
+.Intro .btn {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: Arial;
+    color: #000;
+    font-size: 20px;
+    background: #fff;
+    padding: 10px 20px;
+    border: solid #000 2px;
+    text-decoration: none;
+    display: table;
+}
+
+.pinresult {
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	border: 1px solid #000;
+}
+
+#welcome-msg {
+	padding-top: 10px;
+}
+
+#welcome-msg span {
+	font-weight: bold;
+	display: block;
+}
+
+#pin-login {
+ 	margin: 20px auto;
+}
+
+#grid {
+ 	margin: 20px 0;
+ 	width: 100%;
+}
+
+#header, #footer, #grid {
+	width: 100%;
+}
